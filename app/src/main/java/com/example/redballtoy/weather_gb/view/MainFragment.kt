@@ -7,14 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.redballtoy.weather_gb.databinding.MainFragmentBinding
 import com.example.redballtoy.weather_gb.model.Weather
 import com.example.redballtoy.weather_gb.viewmodel.AppState
 import com.example.redballtoy.weather_gb.viewmodel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
-
 
 
 class MainFragment : Fragment() {
@@ -52,13 +50,14 @@ class MainFragment : Fragment() {
                 //оставаться тем хе самым
                 viewLifecycleOwner,
                 //при изменении сояния объекта он будет про разному отображаться
-                Observer { state: AppState-> renderData(state) })
+                Observer { state: AppState -> renderData(state) })
         //определяем из какого локального хранилища будеи получать данные
         viewModel.getWeatherFromLocalSource()
 
     }
 
 
+    //функция для отображения информации при изменении состояния
     private fun renderData(appState: AppState?) {
         when (appState) {
             is AppState.Success -> {
@@ -72,21 +71,28 @@ class MainFragment : Fragment() {
             is AppState.Error -> {
                 binding.loadingLayout.visibility = View.GONE
                 Snackbar
-                        .make(binding.mainView, "Error", Snackbar.LENGTH_INDEFINITE)
+                        .make(binding.loadingLayout, "Error", Snackbar.LENGTH_INDEFINITE)
                         .setAction("Reload") { viewModel.getWeatherFromLocalSource() }
                         .show()
             }
         }
     }
 
+    //отображает погоду если данные пришли SUCESS
     private fun setData(weatherData: Weather) {
-        TODO("Not yet implemented")
+        binding.tvCityName.text = weatherData.city.city
+        val ltLat = "lt/ln: " +
+                "${weatherData.city.lat}" +
+                "/${weatherData.city.lon}"
+        binding.tvLatitudeValue.text = ltLat
+        binding.tvCurrentTemperatureValue.text=weatherData.currentTemperature.toString()
+        binding.tvFeelAsTemperatureValue.text=weatherData.feelsLikeTemperature.toString()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         //cleaning binding
-        _binding=null
+        _binding = null
     }
 
     companion object {
