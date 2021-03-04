@@ -13,8 +13,8 @@ class MainViewModel(
         private val repositoryImpl: Repository = RepositoryImpl()
 ) : ViewModel() {
 
-    //LivaData to which we will subscribe (on AppState object object which is in LivaData)
-    //get notified when AppState object changes
+    /*LivaData to which we will subscribe (on AppState object object which is in LivaData)
+    get notified when AppState object changes*/
     fun getLiveDate(): LiveData<AppState> = liveDataToObserve
 
 
@@ -24,8 +24,8 @@ class MainViewModel(
 
     //LiveData gets data from source
     private fun getDataFromLocalSource() {
-        //putting data into liveDataToObserve in the current thread
-        // and the subscriber will receive it in the same thread
+        /*putting data into liveDataToObserve in the current thread
+        and the subscriber will receive it in the same thread*/
         liveDataToObserve.value = AppState.Loading
 
         //simulate a request to the network
