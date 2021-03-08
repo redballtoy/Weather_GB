@@ -3,4 +3,7 @@
     <string name="moscow">Москва</string>
     <string name="feel_as">Ощущается как:</string>
     <string name="_23">+23</string>
+    <string name="lt_ln_215121212">lt/ln 215121212</string>
+    <string name="temp">Температура</string>
+    <string name="_15">+15</string>
 </resources>

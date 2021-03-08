@@ -3,8 +3,8 @@ package com.example.redballtoy.weather_gb.model
 //A class describing the state of the weather in a particular city
 data class Weather(
         val city: City = getDefaultCity(),
-        val currentTemperature: Int = 0,
-        val feelsLikeTemperature: Int = 0
+        val currentTemperature: String = "+12",
+        val feelsLikeTemperature: String = "+13"
 
 
 )

@@ -62,16 +62,16 @@ class MainFragment : Fragment() {
         when (appState) {
             is AppState.Success -> {
                 val weatherData = appState.weatherData
-                binding.loadingLayout.visibility = View.GONE
+                binding.flLoading.visibility=View.GONE
                 setData(weatherData)
             }
             is AppState.Loading -> {
-                binding.loadingLayout.visibility = View.VISIBLE
+                binding.flLoading.visibility=View.VISIBLE
             }
             is AppState.Error -> {
-                binding.loadingLayout.visibility = View.GONE
+                binding.flLoading.visibility=View.GONE
                 Snackbar
-                        .make(binding.loadingLayout, "Error", Snackbar.LENGTH_INDEFINITE)
+                        .make(binding.flLoading, "Error", Snackbar.LENGTH_INDEFINITE)
                         .setAction("Reload") { viewModel.getWeatherFromLocalSource() }
                         .show()
             }
@@ -85,8 +85,8 @@ class MainFragment : Fragment() {
                 "${weatherData.city.lat}" +
                 "/${weatherData.city.lon}"
         binding.tvLatitudeValue.text = ltLat
-        binding.tvCurrentTemperatureValue.text=weatherData.currentTemperature.toString()
-        binding.tvFeelAsTemperatureValue.text=weatherData.feelsLikeTemperature.toString()
+        binding.tvCurrentTemperatureValue.text=weatherData.currentTemperature
+        binding.tvFeelAsTemperatureValue.text=weatherData.feelsLikeTemperature
     }
 
     override fun onDestroy() {
