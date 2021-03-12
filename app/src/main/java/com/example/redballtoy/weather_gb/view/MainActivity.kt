@@ -3,6 +3,7 @@ package com.example.redballtoy.weather_gb.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.redballtoy.weather_gb.R
+import com.example.redballtoy.weather_gb.view.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, MainFragment())
+                .replace(R.id.container, MainFragment.newInstance())
                 .commit()
         }
     }

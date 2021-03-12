@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_city_name"
+        android:id="@+id/tvDetailCityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_big"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_latitude_value"
+        android:id="@+id/tvDetailCityLatitudeValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding"
@@ -30,11 +30,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_city_name"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailCityName"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_current_temp_header"
+        android:id="@+id/tvDetailCityCurrentTempHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_big"
@@ -44,11 +44,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_latitude_value"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailCityLatitudeValue"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_current_temperature_value"
+        android:id="@+id/tvDetailCityCurrentTemperatureValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding"
@@ -58,12 +58,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_current_temp_header"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailCityCurrentTempHeader"
         app:layout_constraintVertical_bias="0.0" />
 
 
     <TextView
-        android:id="@+id/tv_feel_as_temp_header"
+        android:id="@+id/tvDetailCityFeelAsTempHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_big"
@@ -73,11 +73,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_current_temperature_value"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailCityCurrentTemperatureValue"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_feel_as_temperature_value"
+        android:id="@+id/tvDetailCityFeelAsTemperatureValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding"
@@ -86,7 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_feel_as_temp_header"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailCityFeelAsTempHeader"
         app:layout_constraintVertical_bias="0.0" />
 
     <FrameLayout
@@ -96,7 +96,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_feel_as_temperature_value"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailCityFeelAsTemperatureValue"
         app:layout_constraintVertical_bias="0.0">
 
         <ProgressBar
